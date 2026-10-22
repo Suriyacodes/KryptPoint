@@ -101,15 +101,17 @@ async def analyze(file: UploadFile = File(...)):
         "image_format": evidence["image_format"],
         "file_size": evidence["file_size"],
         "verdict": verdict,
-        "model_name": None,
-        "ai_generated_score": None,
+        "model_name": (model_output or {}).get("model_name"),
+        "ai_generated_score": (model_output or {}).get("ai_generated_score"),
         "status": ai_result.get("status", "unavailable"),
         "quality_warnings": quality_warnings,
         "findings": findings,
         "limitations": limitations,
         "explanation": (
-            "Image evidence was recorded. An AI authenticity prediction "
-            "is not available until the model is connected."
+            "Smaug assessed this image for AI-generated imagery. "
+            "The score is not proof of authenticity."
+            if ai_result.get("status") == "available"
+            else "Image evidence was recorded, but the AI prediction is unavailable."
         ),
         "possible_matches": [],
     }
