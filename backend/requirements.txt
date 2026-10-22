@@ -1,0 +1,10 @@
+
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+ImageHash
+reportlab
+cryptography
+python-dotenv
+httpx

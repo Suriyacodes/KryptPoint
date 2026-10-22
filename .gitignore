@@ -11,3 +11,11 @@ __pycache__/
 *.bin
 
 test_images/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+*.db
