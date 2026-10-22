@@ -1,7 +1,7 @@
 /* KryptPoint UI configuration. Change the API base URL here only. */
 window.KRYPTPOINT_CONFIG = {
   // FastAPI backend base URL, no trailing slash.
-  API_BASE_URL: "http://localhost:8000",
+  API_BASE_URL: "http://172.18.229.55:8000",
 
   // Client-side validation only; the backend is the source of truth.
   // ASSUMPTION: confirm accepted formats and size limit with the backend team.
